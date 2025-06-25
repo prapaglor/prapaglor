@@ -12,15 +12,23 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; 
+} */
+
+/* globals.css */
+body {
+  background-color: #ffffff; /* Tailwind equivalent: bg-gray-50 */
+  color: #1f2937;            /* Optional: text color (gray-800) */
+  margin: 0;
+  font-family: sans-serif;   /* or use font from next/font */
 }
