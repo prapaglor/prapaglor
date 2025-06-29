@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F2EFE7;
   --foreground: #171717;
 }
 
@@ -27,7 +27,7 @@
 
 /* globals.css */
 body {
-  background-color: #ffffff; /* Tailwind equivalent: bg-gray-50 */
+  background-color: #A4C4BC; /* Tailwind equivalent: bg-gray-50 */
   color: #1f2937;            /* Optional: text color (gray-800) */
   margin: 0;
   font-family: sans-serif;   /* or use font from next/font */

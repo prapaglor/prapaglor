@@ -1,6 +1,5 @@
 import DescriptionCard from "@/components/DescriptionCard";
 import LocationCard from "@/components/LocationCard";
-import NavBar from "@/components/NavBar";
 import { Poppins } from 'next/font/google';
 
 const poppins = Poppins({
@@ -10,8 +9,7 @@ const poppins = Poppins({
 
 export default function Home() {
   return (
-    <div className={poppins.className}>
-      <NavBar />
+    <div className={`${poppins.className} text-[#F0F3F0]`}>
       <DescriptionCard />
       <LocationCard />
     </div>
