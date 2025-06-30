@@ -14,27 +14,25 @@ const LocationCard = () => {
   return (
     <div
       id="lokasi"
-      className="w-full h-screen px-4 py-16 flex items-center justify-center"
+      className="w-full h-screen px-4 sm:px-8 py-16 flex items-center justify-center"
     >
       <div
-        className="bg-[#295C55] rounded-2xl shadow-lg border border-gray-200 overflow-hidden max-w-5xl w-full p-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch"
         data-aos="fade-up"
       >
-        {/* Kiri: Teks */}
-        <div className="text-white text-center md:text-left">
-          <h1 className="text-xl md:text-2xl font-semibold mb-4">
+        {/* Kiri: Teks dalam Card */}
+        <div className="bg-[#295C55] text-white rounded-xl p-6 shadow-md h-[250px] md:h-[350px] flex flex-col justify-center">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-center md:text-left">
             Lokasi Desa Prapag Lor
           </h1>
-          <p className="text-sm md:text-base leading-relaxed">
-            Desa Prapag Lor terletak di Kecamatan Losari, Kabupaten Brebes, Jawa Tengah.
-            Lokasi strategis ini memudahkan akses dari berbagai arah dan menjadi pusat
-            aktivitas masyarakat setempat.
+          <p className="text-sm md:text-base leading-relaxed text-center md:text-left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt repudiandae iste sequi voluptate praesentium molestiae, consequuntur aliquam itaque harum beatae voluptates porro eveniet, quidem officiis, dignissimos illum quis inventore reprehenderit?
           </p>
         </div>
 
         {/* Kanan: Map */}
         <div
-          className="w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-xl overflow-hidden"
+          className="w-full h-[250px] md:h-[350px] overflow-hidden rounded-xl"
           data-aos="zoom-in"
         >
           <MapDesa />

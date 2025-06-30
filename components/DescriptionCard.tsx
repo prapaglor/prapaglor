@@ -22,13 +22,10 @@ const DescriptionCard = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
       </div>
 
-      {/* Navbar tetap fixed, tidak perlu ubah di sini */}
-      <NavBar />
-
       {/* Konten Tengah */}
       <div className="flex justify-center items-center h-full">
         <h1
-          className="text-white text-center text-4xl md:text-6xl font-bold"
+          className="text-white text-center text-4xl md:text-5xl lg:text-8xl font-bold"
           data-aos="fade-up"
         >
           Selamat Datang <br />
