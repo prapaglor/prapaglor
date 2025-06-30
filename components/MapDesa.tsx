@@ -9,7 +9,8 @@ import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 const MapDesa = () => {
   useEffect(() => {
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
+    // Hindari penggunaan `any` dengan pendekatan yang aman
+    delete (L.Icon.Default.prototype as unknown as { _getIconUrl: unknown })._getIconUrl;
 
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: markerIcon2x.src,
@@ -17,8 +18,10 @@ const MapDesa = () => {
       shadowUrl: markerShadow.src,
     });
 
-    if (L.DomUtil.get('map')) {
-      L.DomUtil.get('map')!.innerHTML = '';
+    // Bersihkan map jika sudah ada
+    const existingMap = L.DomUtil.get('map');
+    if (existingMap) {
+      existingMap.innerHTML = '';
     }
 
     const map = L.map('map', {

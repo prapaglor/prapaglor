@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import NavBar from './NavBar';
 import { TypeAnimation } from 'react-type-animation';
 
 const DescriptionCard = () => {
