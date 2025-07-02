@@ -27,8 +27,8 @@
 
 /* globals.css */
 body {
-  background-color: #A4C4BC; /* Tailwind equivalent: bg-gray-50 */
-  color: #1f2937;            /* Optional: text color (gray-800) */
+  background: radial-gradient(circle at center, #A4C4BC, #295C55);
+  color: #1f2937;
   margin: 0;
-  font-family: sans-serif;   /* or use font from next/font */
+  font-family: sans-serif;
 }

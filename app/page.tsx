@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import NavBar from "@/components/NavBar";
 import DescriptionCard from "@/components/DescriptionCard";
-import LocationCard from "@/components/LocationCard";
 import EbookCard from "@/components/EbookCard";
 import MateriK3Card from '@/components/MateriK3Card';
 import { Poppins } from 'next/font/google';
+import ProfileCard from '@/components/ProfileCard';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,7 +30,7 @@ export default function Home() {
 
       {/* Ref ke bagian yang ingin langsung dilihat setelah DescriptionCard */}
       <div ref={contentRef}>
-        {activeSection === 'profil' && <LocationCard />}
+        {activeSection === 'profil' && <ProfileCard />}
         {activeSection === 'materi' && <MateriK3Card />}
         {activeSection === 'ebook' && <EbookCard />}
       </div>

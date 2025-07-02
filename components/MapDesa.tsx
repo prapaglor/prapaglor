@@ -26,7 +26,7 @@ const MapDesa = () => {
 
     const map = L.map('map', {
       zoomControl: true,
-    }).setView([-6.8184602, 108.8454250], 13);
+    }).setView([-6.8184602, 108.8454250], 14);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '',

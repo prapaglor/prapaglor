@@ -29,7 +29,7 @@ const NavBar = ({ activeSection, setActiveSection }: {
         <button
           key={key}
           onClick={() => handleClick(key as 'profil' | 'materi' | 'ebook')}
-          className={`text-3xl md:text-base font-medium px-3 py-1 rounded-2xl transition duration-300
+          className={`text-sm md:text-xl font-medium px-3 py-1 rounded-2xl transition duration-300
             ${activeSection === key ? 'bg-white text-[#295C55]' : 'text-white hover:bg-white hover:text-[#295C55]'}`}
         >
           {key === 'profil' ? 'Profil Desa' : key === 'materi' ? 'Materi K3' : 'EBook'}
