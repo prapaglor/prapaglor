@@ -2,7 +2,16 @@
 import React, { useState } from 'react';
 import UmkmMap from './UmkmMap';
 
-const umkmList = [
+interface Umkm {
+  id: number;
+  title: string;
+  image: string;
+  nama: string;
+  lokasi: [number, number];
+  telp: string;
+}
+
+const umkmList: Umkm[] = [
   {
     id: 1,
     title: 'Warung Sate Sapi (Mas Cebbo)',
@@ -38,7 +47,7 @@ const umkmList = [
 ];
 
 const UmkmGrid = () => {
-  const [selectedUMKM, setSelectedUMKM] = useState<any | null>(null);
+  const [selectedUMKM, setSelectedUMKM] = useState<Umkm | null>(null);
 
   return (
     <div className="w-full px-4 sm:px-8 py-28 flex items-center justify-center">

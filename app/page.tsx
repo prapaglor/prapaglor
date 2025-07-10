@@ -8,7 +8,6 @@ import MateriK3Card from '@/components/MateriK3Card';
 import EbookCard from '@/components/EbookCard';
 import { Poppins } from 'next/font/google';
 import DescriptionCard from '@/components/DescriptionCard';
-import UmkmCard from '@/components/UmkmCard';
 import UmkmGrid from '@/components/UmkmGrid';
 
 const poppins = Poppins({

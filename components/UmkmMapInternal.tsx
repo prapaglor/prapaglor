@@ -14,10 +14,12 @@ interface UmkmMapProps {
 
 const UmkmMap: React.FC<UmkmMapProps> = ({ lokasi, nama }) => {
   useEffect(() => {
-    // Cek window hanya untuk jaga-jaga
     if (typeof window === 'undefined') return;
 
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
+    // Amankan penghapusan _getIconUrl
+    if ('_getIconUrl' in L.Icon.Default.prototype) {
+      delete (L.Icon.Default.prototype as { _getIconUrl?: unknown })._getIconUrl;
+    }
 
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: markerIcon2x.src,

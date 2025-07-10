@@ -4,7 +4,16 @@ import UmkmMap from './UmkmMap';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 
-const umkmList = [
+export interface Umkm {
+  id: number;
+  title: string;
+  image: string;
+  nama: string;
+  lokasi: [number, number];
+  telp: string;
+}
+
+const umkmList: Umkm[] = [
   {
     id: 1,
     title: 'Warung Sate Sapi (Mas Cebbo)',
@@ -44,7 +53,7 @@ export default function UmkmCardInternal({
 }: {
   setActiveSection?: (section: 'beranda' | 'profil' | 'materi' | 'umkm' | 'ebook') => void;
 }) {
-  const [selectedUMKM, setSelectedUMKM] = useState<any | null>(null);
+  const [selectedUMKM, setSelectedUMKM] = useState<Umkm | null>(null);
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {
