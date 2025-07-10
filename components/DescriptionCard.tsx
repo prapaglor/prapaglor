@@ -11,7 +11,6 @@ const DescriptionCard = () => {
 
   return (
     <div className="relative w-full h-screen pt-20">
-      {/* Background Image dengan efek blur */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
         <img
           src="/gambarPrapag.jpg"
@@ -21,7 +20,6 @@ const DescriptionCard = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
       </div>
 
-      {/* Konten Tengah */}
       <div className="flex justify-center items-center h-full">
         <h1
           className="text-white text-center text-4xl md:text-5xl lg:text-8xl font-bold"

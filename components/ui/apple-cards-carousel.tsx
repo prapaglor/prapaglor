@@ -163,7 +163,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -259,7 +259,6 @@ export const Card = ({
         <BlurImage
           src={card.src}
           alt={card.title}
-          fill
           className="absolute inset-0 z-10 object-cover"
         />
       </motion.button>
@@ -273,7 +272,6 @@ export const BlurImage = ({
   src,
   className,
   alt,
-  fill, // buang ini dari rest
   ...rest
 }: ImageProps & { fill?: boolean }) => {
   const [isLoading, setLoading] = useState(true);

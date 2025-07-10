@@ -58,16 +58,14 @@ const GrafikPenduduk = () => {
   };
 
   return (
-    <div className="w-full px-4 sm:px-8 py-12">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-normal mb-8 text-left text-white">
-          Grafik Jumlah Penduduk Berdasarkan Umur dan Jenis Kelamin
-        </h2>
+    <div className="w-full pt-20">
+      <h2 className="text-2xl md:text-3xl font-normal mb-8 text-left text-white">
+        Grafik Jumlah Penduduk Berdasarkan Umur dan Jenis Kelamin
+      </h2>
 
-        <div className="bg-white rounded-xl shadow-md p-4">
-          <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
-            <Bar data={data} options={options} />
-          </div>
+      <div className="bg-white rounded-xl shadow-md p-4">
+        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
+          <Bar data={data} options={options} />
         </div>
       </div>
     </div>

@@ -13,10 +13,10 @@ const LocationCard = () => {
 
   return (
     <div
-      className="w-full min-h-screen flex items-center justify-center px-4 sm:px-8 py-20"
+      className="w-full px-4 sm:px-8 py-44 flex items-center justify-center"
       data-aos="fade-up"
     >
-      <div className='className="w-full max-w-7xl"'>
+      <div className="w-full max-w-7xl">
         <h1 className="py-5 text-white text-2xl md:text-5xl font-bold mb-4 text-left mx-auto">
           Lokasi Desa Prapag Lor
         </h1>
@@ -28,7 +28,7 @@ const LocationCard = () => {
           {/* Kiri: Teks dalam Card */}
           <div className="bg-gradient-to-r from-[#295C55] to-[#143d47] text-white rounded-xl px-4 py-12 shadow-md h-[300px] md:h-[400px] flex flex-col justify-center">
             <p className="text-lg md:text-2xl font-normal leading-relaxed text-center md:text-left max-w-xl">
-              Desa Prapag Lor terletak di Kecamatan Losari, Kabupaten Brebes, Provinsi Jawa Tengah, Indonesia. Desa ini berada di ujung utara wilayah Brebes, berbatasan langsung dengan Laut Jawa di utara dan timur, serta Desa Prapag Kidul dan Karangdempel di selatan dan baratnya
+              Desa Prapag Lor terletak di Kecamatan Losari, Kabupaten Brebes, Provinsi Jawa Tengah. Desa ini berada di ujung utara wilayah Brebes, berbatasan langsung dengan Laut Jawa di utara dan timur, serta Desa Prapag Kidul dan Karangdempel di selatan dan baratnya.
             </p>
           </div>
 
