@@ -19,7 +19,6 @@ const EbookContent = () => {
     },
   ];
 
-
   return (
     <div className="w-full px-4 sm:px-8 py-28 flex flex-col items-center">
       <div className="w-full max-w-7xl">
@@ -28,37 +27,25 @@ const EbookContent = () => {
         </h1>
 
         {/* Grid Card */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {ebooks.map((ebook) => (
             <div
               key={ebook.id}
-              className="cursor-pointer rounded-lg overflow-hidden shadow hover:shadow-lg transition"
+              className="cursor-pointer border rounded-lg overflow-hidden shadow hover:shadow-lg transition"
               onClick={() => setSelectedEbook(ebook)}
             >
-              <div className="relative aspect-[3/4] w-full bg-gray-100">
-                <img
-                  src={ebook.cover}
-                  alt={ebook.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+              <img src={ebook.cover} alt={ebook.title} className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h2 className="text-lg font-semibold">{ebook.title}</h2>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Modal PDF Viewer */}
-      {selectedEbook && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-lg shadow-xl w-full max-w-5xl h-[90vh] relative overflow-hidden">
-            <div className="flex justify-end px-4 py-2 border-b">
-              <button
-                className="text-red-600 font-bold text-2xl"
-                onClick={() => setSelectedEbook(null)}
-              >
-                ×
-              </button>
-            </div>
+        {/* PDF Viewer */}
+        {selectedEbook && (
+          <div className="mt-16 w-full h-[80vh]">
+            <h2 className="text-xl font-bold mb-4 text-center">{selectedEbook.title}</h2>
             <iframe
               src={selectedEbook.file}
               width="100%"
@@ -66,9 +53,17 @@ const EbookContent = () => {
               style={{ border: 'none' }}
               title={selectedEbook.title}
             />
+            <div className="text-center mt-4">
+              <button
+                className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                onClick={() => setSelectedEbook(null)}
+              >
+                Tutup Viewer
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
