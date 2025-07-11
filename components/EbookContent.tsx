@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 type Ebook = {
   id: number;
@@ -10,8 +10,6 @@ type Ebook = {
 
 const EbookContent = () => {
   const [selectedEbook, setSelectedEbook] = useState<Ebook | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
   const ebooks: Ebook[] = [
     {
       id: 1,
