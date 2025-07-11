@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 const MapDesa = dynamic(() => import('./MapDesa'), { ssr: false });
 
 const LocationCard = () => {
@@ -28,6 +29,7 @@ const LocationCard = () => {
           {/* Kiri: Teks dalam Card */}
           <div className="bg-gradient-to-r from-[#295C55] to-[#143d47] text-white rounded-xl px-4 py-12 shadow-md h-[300px] md:h-[400px] flex flex-col justify-center">
             <p className="text-lg md:text-2xl font-normal leading-relaxed text-center md:text-left max-w-xl">
+              
               Desa Prapag Lor terletak di Kecamatan Losari, Kabupaten Brebes, Provinsi Jawa Tengah. Desa ini berada di ujung utara wilayah Brebes, berbatasan langsung dengan Laut Jawa di utara dan timur, serta Desa Prapag Kidul dan Karangdempel di selatan dan baratnya.
             </p>
           </div>

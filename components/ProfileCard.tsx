@@ -7,9 +7,7 @@ const ProfileCard = () => {
   return (
     <>
       <LocationCard />
-      <OrganizationCard />
-      <PendudukCard />
-      
+      <PendudukCard /> 
     </>
   )
 }

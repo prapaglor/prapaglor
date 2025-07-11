@@ -25,13 +25,15 @@ const DescriptionCard = () => {
           className="text-white text-center text-4xl md:text-5xl lg:text-8xl font-bold"
           data-aos="fade-up"
         >
-          Selamat Datang <br />
           <TypeAnimation
-            sequence={['Di Website', 1000, 'Desa Prapag Lor', 1000]}
+            sequence={['Selamat Datang', 1000, 'いらっしゃいませ', 1000, 'Welcome', 1000]}
             wrapper="span"
             speed={50}
-            repeat={Infinity}
+            repeat={1}
           />
+          <br />
+          Di Website <br />
+          Desa Prapag Lor
         </h1>
       </div>
     </div>
