@@ -1,18 +1,26 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+type Ebook = {
+  id: number;
+  title: string;
+  file: string;
+  cover: string;
+};
 
 const EbookContent = () => {
-  const [selectedEbook, setSelectedEbook] = useState(null);
+  const [selectedEbook, setSelectedEbook] = useState<Ebook | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const ebooks = [
+  const ebooks: Ebook[] = [
     {
       id: 1,
       title: 'Rumah Aman Keluarga Migran',
       file: '/Ebook1.pdf',
-      cover: '/Ebook1-cover.png', // taruh di /public
+      cover: '/Ebook1-cover.png',
     },
-
   ];
+
 
   return (
     <div className="w-full px-4 sm:px-8 py-28 flex flex-col items-center">
