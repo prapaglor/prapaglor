@@ -42,25 +42,35 @@ const NavBar = ({
   const menuItems = ['beranda', 'profil', 'materi', 'umkm', 'ebook'] as const;
 
   const NavMenu = ({ isMobile = false }: { isMobile?: boolean }) => (
-    <div
-      className={`${
-        isMobile
-          ? 'flex flex-col gap-2 mt-3'
-          : 'flex flex-wrap justify-center sm:justify-end gap-3'
-      }`}
+  <div
+    className={`${
+      isMobile
+        ? 'flex flex-col gap-2 mt-3'
+        : 'flex flex-wrap justify-center sm:justify-end gap-3'
+    }`}
+  >
+    {menuItems.map((key) => (
+      <button
+        key={key}
+        onClick={() => handleClick(key)}
+        className={`text-sm md:text-xl font-medium px-3 py-1 rounded-2xl transition duration-300
+          ${activeSection === key ? 'bg-white text-[#295C55]' : 'text-white hover:bg-white hover:text-[#295C55]'}`}
+      >
+        {sectionLabels[key]}
+      </button>
+    ))}
+
+    {/* Tombol tambahan: Link Pengaduan langsung ke WhatsApp */}
+    <a
+      href="https://wa.me/6281234567890" // ganti dengan nomor WA kamu
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-sm md:text-xl font-medium px-3 py-1 rounded-2xl transition duration-300 text-white hover:bg-white hover:text-[#295C55]"
     >
-      {menuItems.map((key) => (
-        <button
-          key={key}
-          onClick={() => handleClick(key)}
-          className={`text-sm md:text-xl font-medium px-3 py-1 rounded-2xl transition duration-300
-            ${activeSection === key ? 'bg-white text-[#295C55]' : 'text-white hover:bg-white hover:text-[#295C55]'}`}
-        >
-          {sectionLabels[key]}
-        </button>
-      ))}
-    </div>
-  );
+      Link Pengaduan
+    </a>
+  </div>
+);
 
   return (
     <>

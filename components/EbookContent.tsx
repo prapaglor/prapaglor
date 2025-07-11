@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 type Ebook = {
   id: number;
@@ -10,6 +10,12 @@ type Ebook = {
 
 const EbookContent = () => {
   const [selectedEbook, setSelectedEbook] = useState<Ebook | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768); // deteksi awal saat load
+  }, []);
+
   const ebooks: Ebook[] = [
     {
       id: 1,
@@ -46,6 +52,8 @@ const EbookContent = () => {
         {selectedEbook && (
           <div className="mt-16 w-full h-[80vh]">
             <h2 className="text-xl font-bold mb-4 text-center">{selectedEbook.title}</h2>
+
+            {/* iframe PDF */}
             <iframe
               src={selectedEbook.file}
               width="100%"
@@ -53,6 +61,21 @@ const EbookContent = () => {
               style={{ border: 'none' }}
               title={selectedEbook.title}
             />
+
+            {/* Fallback link untuk mobile */}
+            {isMobile && (
+              <div className="text-center mt-4">
+                <a
+                  href={selectedEbook.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline text-sm"
+                >
+                  PDF tidak tampil penuh? Klik di sini untuk buka di tab baru
+                </a>
+              </div>
+            )}
+
             <div className="text-center mt-4">
               <button
                 className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
