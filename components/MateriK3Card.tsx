@@ -410,14 +410,6 @@ const Literasi = ({ judul }: { judul: string }) => {
         </p>
       </div>
 
-      {/* Ilustrasi */}
-      <img
-        src="/K3_logo.png"
-        alt="Edukasi Literasi Kontrak Kerja"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain mt-8"
-      />
     </div>
   );
 };
@@ -453,14 +445,6 @@ const PeranPemerintah = ({ judul }: { judul: string }) => {
           <li>Pelindungan selama bekerja</li>
           <li>Pelindungan setelah bekerja</li>
         </ul>
-
-        <img
-        src="/K3_logo.png"
-        alt="Peran Pemerintah dalam Perlindungan PMI"
-        height="500"
-        width="500"
-        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain mt-8"
-        />
 
         {/* Pelindungan Sebelum Bekerja */}
         <h2 className="text-xl md:text-2xl font-bold mb-2">A. Pelindungan Sebelum Bekerja</h2>
