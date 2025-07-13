@@ -29,7 +29,7 @@ const InfografisEcoBrick = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm">
-      <div className="bg-gradient-to-br from-[#295C55] to-[#143d47] text-white rounded-xl max-w-2xl w-[92%] p-6 relative shadow-lg">
+      <div className="bg-gradient-to-br from-[#295C55] to-[#143d47] text-white rounded-xl max-w-xl w-[90%] p-4 relative shadow-lg">
         {/* Tombol Tutup */}
         <button
           onClick={() => setShowModal(false)}
@@ -40,7 +40,7 @@ const InfografisEcoBrick = () => {
         </button>
 
         {/* Judul */}
-        <h2 className="text-2xl md:text-3xl font-bold mb-5 text-center">
+        <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
           Selamat Datang di Website Kami!
         </h2>
 
@@ -83,12 +83,12 @@ const InfografisEcoBrick = () => {
           {/* Carousel */}
           <div ref={sliderRef} className="keen-slider rounded-md overflow-hidden">
             {infografisImages.map((src, i) => (
-              <div key={i} className="keen-slider__slide flex justify-center p-3">
-                <div className="bg-white p-3 rounded-lg border border-white shadow-md">
+              <div key={i} className="keen-slider__slide flex justify-center p-2">
+                <div className="bg-white p-2 rounded-lg border border-white shadow-md">
                   <img
                     src={src}
                     alt={`Infografis ${i + 1}`}
-                    className="w-full max-w-lg mx-auto h-auto max-h-[65vh] object-contain rounded"
+                    className="w-full max-w-md mx-auto h-auto max-h-[60vh] object-contain rounded"
                   />
                 </div>
               </div>
