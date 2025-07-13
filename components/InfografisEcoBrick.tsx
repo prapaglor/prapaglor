@@ -41,7 +41,7 @@ const InfografisEcoBrick = () => {
 
         {/* Judul */}
         <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">
-          Selamat Datang di Website Kami!
+          Selamat Datang!
         </h2>
 
         {/* Slider Container */}
