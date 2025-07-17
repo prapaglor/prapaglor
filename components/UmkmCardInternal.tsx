@@ -92,16 +92,6 @@ export default function UmkmCardInternal({
           ))}
         </div>
 
-        {/* Tombol Lihat Semua */}
-        <div className="mt-4 flex justify-end">
-          <button
-            onClick={() => setActiveSection?.('umkm')}
-            className="text-sm text-white underline hover:text-gray-200 transition"
-          >
-            Lihat Semua →
-          </button>
-        </div>
-
         {/* Modal */}
         {selectedUMKM && (
           <div
