@@ -49,7 +49,8 @@ const umkmList: Umkm[] = [
 ];
 
 export default function UmkmCardInternal({
-  setActiveSection,
+  // Komentar agar tidak digunakan & tidak error ESLint
+  // setActiveSection,
 }: {
   setActiveSection?: (section: 'beranda' | 'profil' | 'materi' | 'umkm' | 'ebook') => void;
 }) {
