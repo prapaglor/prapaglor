@@ -4,6 +4,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 
 const infografisImages = [
+  'infografisduta.jpg',
   '/hukum1.jpg',
   '/hukum2.jpg',
   '/hukum3.jpg',

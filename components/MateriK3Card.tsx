@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { Carousel, Card } from '@/components/ui/apple-cards-carousel';
 import AOS from 'aos';
+import LandscapeSlideshow from './LandscapeSlideshow';
 import 'aos/dist/aos.css';
 
 const MateriK3Card = () => {
@@ -10,22 +11,44 @@ const MateriK3Card = () => {
     <Card key={card.src} card={card} index={index} />
   ));
 
+  const images = [
+    { src: "/policy/policy1.jpg"},
+    { src: "/policy/policy2.jpg"},
+    { src: "/policy/policy3.jpg"},
+    { src: "/policy/policy4.jpg"},
+    { src: "/policy/policy5.jpg"},
+    { src: "/policy/policy6.jpg"},
+    { src: "/policy/policy7.jpg"},
+    { src: "/policy/policy8.jpg"},
+  ];
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
   return (
-    <div
-      className="w-full min-h-screen flex items-center justify-center px-4 sm:px-8 py-20"
-      data-aos="fade-up"
-    >
-      <div className="w-full max-w-7xl">
-        <h2 className="text-xl md:text-5xl font-bold text-white md:pt-10 text-left">
-          Edukasi Keselamatan & Kesehatan Kerja (K3)
-        </h2>
-        <Carousel items={cards} />
-      </div>
+  <div
+    className="w-full min-h-screen flex flex-col items-center justify-start px-4 sm:px-8 py-20 gap-20"
+    data-aos="fade-up"
+  >
+    {/* Section 1 */}
+    <div className="w-full max-w-7xl">
+      <h2 className="text-xl md:text-5xl font-bold text-white md:pt-10 text-left">
+        Edukasi Keselamatan & Kesehatan Kerja (K3)
+      </h2>
+      <Carousel items={cards} />
     </div>
+
+      {/* Policy Brief */}
+    <section className="w-full max-w-7xl mx-auto">
+      <h2 className="text-2xl md:text-4xl font-semibold text-white">Policy Brief</h2>
+      <div className="mt-3 h-px w-16 bg-white/30" />
+      <div className="mt-6 rounded-xl bg-white/5 p-3">
+        <LandscapeSlideshow images={images} />
+      </div>
+    </section>
+
+  </div>
   );
 };
 
