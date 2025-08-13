@@ -20,7 +20,7 @@ export default function LandscapeSlideshow({
   const [playing, setPlaying] = useState(autoPlay);
   const touchStartX = useRef<number | null>(null);
   const hoverRef = useRef<HTMLDivElement | null>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const count = images?.length ?? 0;
   const go = (i: number) => setIndex(((i % count) + count) % count);
@@ -50,13 +50,15 @@ export default function LandscapeSlideshow({
     touchStartX.current = null;
   };
 
-  // Autoplay + pause
+  // Autoplay + pause on hover/hidden
   useEffect(() => {
     const node = hoverRef.current;
     const handleEnter = () => setPlaying(false);
     const handleLeave = () => setPlaying(autoPlay);
-    node?.addEventListener('mouseenter', handleEnter);
-    node?.addEventListener('mouseleave', handleLeave);
+    if (node) {
+      node.addEventListener('mouseenter', handleEnter);
+      node.addEventListener('mouseleave', handleLeave);
+    }
 
     const onVisibility = () => {
       if (document.hidden) setPlaying(false);
@@ -65,20 +67,26 @@ export default function LandscapeSlideshow({
     document.addEventListener('visibilitychange', onVisibility);
 
     return () => {
-      node?.removeEventListener('mouseenter', handleEnter);
-      node?.removeEventListener('mouseleave', handleLeave);
+      if (node) {
+        node.removeEventListener('mouseenter', handleEnter);
+        node.removeEventListener('mouseleave', handleLeave);
+      }
       document.removeEventListener('visibilitychange', onVisibility);
     };
   }, [autoPlay]);
 
   useEffect(() => {
     if (!playing || count <= 1) return;
-    timerRef.current && clearInterval(timerRef.current);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
     timerRef.current = setInterval(() => {
       setIndex((i) => ((i + 1) % count + count) % count);
     }, interval);
     return () => {
-      timerRef.current && clearInterval(timerRef.current);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
     };
   }, [playing, interval, count]);
 
@@ -105,7 +113,7 @@ export default function LandscapeSlideshow({
             }`}
             aria-hidden={i !== index}
           >
-            {/* Background blur */}
+            {/* Background blur agar layar tetap penuh */}
             <Image
               src={img.src}
               alt=""
@@ -116,7 +124,7 @@ export default function LandscapeSlideshow({
               sizes="100vw"
             />
 
-            {/* Foreground image container */}
+            {/* Foreground: gambar utuh (object-contain) + mobile-friendly heights */}
             <div className="absolute inset-0 grid place-items-center px-2">
               <div className="relative w-full max-w-6xl h-[50vh] sm:h-[65vh] md:h-[75vh]">
                 <Image
@@ -130,7 +138,6 @@ export default function LandscapeSlideshow({
               </div>
             </div>
 
-            {/* Caption */}
             {(img.caption || img.alt) && (
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 max-w-[95vw] sm:max-w-3xl text-center text-white drop-shadow">
                 <p className="inline-block px-3 py-1 text-xs sm:text-sm md:text-base font-medium bg-black/40 rounded">
